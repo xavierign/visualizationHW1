@@ -1,0 +1,71 @@
+---
+title: "HW1 Visualization. The Class Survey Data Visualization."
+author: Azam Alfayez, Yu Xiyue, John Elton, Xavier I Gonzalez
+output: pdf_document
+---
+
+## Introduction
+This study analyses the output data from the initial survey conducted at the begginin of the course Exploratory Data Analysis and Visualization in Columbia University. We understand that its proupose is to allow us to do a hands-on work with new visualization tools introduced. Along the study, we will try to present with an original visualization part of the answer of some question about the data.
+
+## Who we are
+Interactive chart.
+
+## How old are we
+Explain procedure.
+
+Link to Microsoft Project Oxford [Face API](https://www.projectoxford.ai/face).
+
+Link to how to do it source: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/).
+
+Form for [feedback](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form).
+
+This is a regular paragraph.
+
+This is another regular paragraph.
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (2).jpeg" width="48">
+
+<noformat>
+<table border="0" cellspacing="0" cellpadding="2">
+<tr>
+<th>
+
+</th>
+<th>
+![alt text](http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (2).jpeg )
+</th>
+<th>
+![alt text](http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (3).jpeg )
+</th>
+</tr>
+<tr>
+<th>![Caption for the picture.](/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png)</th>
+<th>![Caption for the picture.](/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png)</th>
+<th>![Caption for the picture.](http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (32).jpeg){:height="36px" width="36px"}</th>
+</tr >
+</table> 
+</noformat>
+
+This study's idea is to <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+![Caption for the picture.](/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png)
+
+{% include image.html url="/images/my-cat.jpg" description="My cat, Robert Downey Jr." %}
+
+<table class="image">
+<caption align="bottom">{{ include.description }}</caption>
+<tr><td><img src="{{ include.url }}" alt="{{ include.description }}"/></td></tr>
+</table>
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
