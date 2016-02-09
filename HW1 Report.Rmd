@@ -167,6 +167,98 @@ ggplot(ages, aes(x=age, fill=gender)) +
 ```
 
 
+## Familiarity with Computational Tools
+
+In this section we explore methods to visualize the relative knowledge of the class as far as computational tools are concerned. In the survey, students were asked to select
+which tools they felt comfortable using from among a list of 20. The type of tools varies from specific computer languages like Python, to more general applications like Google Drive.
+
+We present two methods for visualizing which tools the greatest number of students feel comfortable with. The first is a Word Cloud. The Word Cloud below prints words with a font size that is correlated to the frequency of responses. So, for example, if more students selected 'R' than any other tool, then 'R' would show up in the largest font.
+
+```{r,include=FALSE}
+options(warn=-1)
+rm(list = ls())
+library(tm)
+library(SnowballC)
+library(wordcloud)
+library(xlsx)
+library(RColorBrewer)
+library(stringr)
+
+
+survey <- read.xlsx('/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/Survey+Response.xlsx',sheetIndex = 1)
+tools = as.vector(survey$Experiences.with.tools)
+
+docs <- Corpus(VectorSource(tools))
+
+# Convert the text to lower case
+#docs <- tm_map(docs, content_transformer(tolower))
+
+# Remove numbers
+#docs <- tm_map(docs, removeNumbers)
+
+# Remove english common stopwords
+#docs <- tm_map(docs, removeWords, stopwords("english"))
+
+# Remove your own stop word
+# specify your stopwords as a character vector
+docs <- tm_map(docs, removeWords, c("formerly","docs","terminal","command",
+                                    "line","expressions","grep","knitr","web","css",
+                                    "js","regular","sweave","google"))
+
+# Remove punctuations
+docs <- tm_map(docs, removePunctuation)
+
+# Eliminate extra white spaces
+#docs <- tm_map(docs, stripWhitespace)
+
+# Text stemming
+# docs <- tm_map(docs, stemDocument)
+
+dtm <- TermDocumentMatrix(docs)
+m <- as.matrix(dtm)
+v <- sort(rowSums(m),decreasing=TRUE)
+v = c(v,R=91,"C++" = 36,"sweave_knitr"=9,"reg_expressions"=18)
+v = sort(v, decreasing=TRUE)
+d <- data.frame(word = names(v),freq=v)
+print(head(d, 30))
+
+set.seed(1234)
+```
+
+```{r, echo=FALSE, fig.height = 5, fig.width = 5, fig.align='center'}
+wordcloud(words = d$word, freq = d$freq, min.freq = 0,
+          max.words=2000, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+```
+
+The Word Cloud, while not quantitative, provides a nice visual to give the audience a general sense of which tools are most well known among the class. We see that 'R' and 'Python' show up frequently, as well as 'Excel' and 'Drive'. We were not surprised by this result, since these languages and tools are commonly pushed in our classes.
+
+For a more quantitative visualization of the responses, we also present a histogram which is ordered from largest number of responses to smallest. From this we can see more accurately than with the Word Cloud which tools were responded to more frequently than others. 
+
+```{r, include=FALSE}
+findFreqTerms(dtm, lowfreq = 3)
+findAssocs(dtm, terms = "freedom", corlimit = 0.3)
+```
+
+```{r, echo=FALSE, fig.height = 4, fig.width = 6 , fig.align="center"}
+#barplot(d[1:10,]$freq, las = 2, names.arg = d[1:10,]$word,
+#        col ="lightblue", main ="Most frequent tools",
+#        ylab = "Word frequencies")
+
+d$word2 <- reorder(d$word, -d$freq, decreasing=T)
+
+c <- ggplot(data=d[1:10,], aes(x=word2, y=freq)) +
+    geom_bar(stat="identity")+ theme_fivethirtyeight() + ggtitle("Most frequently mentioned tools") + scale_fill_gdocs() + scale_color_gdocs() 
+c
+
+```
+
+
+The conclusion one can draw from this visualization of our comfort level with various tools is that the majority of the class has experience with 'R' and 'Python'. Some of the more specialized tools like 'SQL' and 'Github' are less familiar to the class, and certain other tools such as 'Sweave' and 'grep' do not show up at all because few people are experienced with them. These considerations would be important for an instructor wanting to determine what class members know coming in. 
+
+
+
+
 ## What do we know
 To explore the data about the programing expreiences and skills we trace a bar and a series of bubble plots. 
 <br>
@@ -212,7 +304,7 @@ for (level1 in programming_level){
 plot_data2 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/Matlab&R_data_mani.xlsx", 1)
 bp1 <- ggplot(plot_data2, aes(x=Matlab, y=data.manipulation.and.modeling, size=Count, label = Count),guide=FALSE) +
   geom_point(colour="white", fill="red", shape=21) 
-bp1 <- bp1 + scale_size_area(max_size = 15) +        scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Github vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("Github") + xlab("Matlab") 
+bp1 <- bp1 + scale_size_area(max_size = 15) +        scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Github vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("Github") + xlab("Matlab") + theme(legend.position="none")
 
 matlab_github_count = c()
 for (level1 in programming_level){
@@ -224,7 +316,7 @@ for (level1 in programming_level){
 }
 plot_data3 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/Matlab&Github.xlsx", 1)
 bp2 <- ggplot(plot_data3, aes(x=Matlab, y=Github, size=Count, label = Count),guide=FALSE)+
-  geom_point(colour="white", fill="red", shape=21)+ scale_size_area(max_size = 15)+  scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Reprod. vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("Reproducible Documentation") + xlab("Matlab")
+  geom_point(colour="white", fill="red", shape=21)+ scale_size_area(max_size = 15)+  scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Reprod. vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("Reproducible Documentation") + xlab("Matlab")+ theme(legend.position="none")
 
 graphics_documentation_count = c()
 for (level1 in programming_level){
@@ -237,7 +329,7 @@ for (level1 in programming_level){
 plot_data4 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/graphics&docu.xlsx", 1)
 bp3 <- ggplot(plot_data4, aes(x=graphics.basics, y=reproducible.documentation, size=Count, label = Count),guide=FALSE)+
   geom_point(colour="white", fill="red", shape=21)+ scale_size_area(max_size = 15)+
-  theme_bw() + scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("R vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("R data manipulation & modelling")
+  theme_bw() + scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("R vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("R data manipulation & modelling")+ theme(legend.position="none")
 
 grid.arrange(bp1, bp2, bp3, ncol=3)
 ```
