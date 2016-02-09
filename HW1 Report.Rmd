@@ -1,71 +1,245 @@
 ---
 title: "HW1 Visualization. The Class Survey Data Visualization."
-author: Azam Alfayez, Yu Xiyue, John Elton, Xavier I Gonzalez
-output: pdf_document
+author: "Azam Alfayez, Yu Xiyue, John Elton, Xavier I Gonzalez"
+output: html_document
 ---
 
 ## Introduction
-This study analyses the output data from the initial survey conducted at the begginin of the course Exploratory Data Analysis and Visualization in Columbia University. We understand that its proupose is to allow us to do a hands-on work with new visualization tools introduced. Along the study, we will try to present with an original visualization part of the answer of some question about the data.
+This study analyses the data from the initial survey conducted at the begginin of the course Exploratory Data Analysis and Visualization in Columbia University. Its proupose, as the team members agreed, is to to do a hands-on work with visualization tools introduced. Along the study, we will try to present with an original visualization part of the answer of some question about the data.
 
 ## Who we are
 Interactive chart.
 
 ## How old are we
-Explain procedure.
+We thught that it would be ideal to have the age of the students in the course to understand more deeply their demographic information. Hence, we downloeaded available pictures in coursewors and send them to [Face API](https://www.projectoxford.ai/face) from Microsoft Project Oxford to estimate the age of each picture. By doing that, we have a relatively accurate age estimation of 31 students, wich is more than 28% of the entire population. For those interested in how we did it, besides the code in [Github](https://github.com/xavierign/visualizationHW1), there is this usefull tutorial: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/). This visualization is intended only to be reviewed within the activities in the course. If you think that your picture should not be there, just provide a feedback and we will remove it inmediately. Also, we would like to know if the estimation is accurate of not. So, if you have 2 minutes, we will appreciate your feedback filling this [form](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form). You can slip the mouse over the pictures to see the estimated age.
+<br>
+<br>
 
-Link to Microsoft Project Oxford [Face API](https://www.projectoxford.ai/face).
-
-Link to how to do it source: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/).
-
-Form for [feedback](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form).
-
-This is a regular paragraph.
-
-This is another regular paragraph.
-<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (2).jpeg" width="48">
 
 <noformat>
-<table border="0" cellspacing="0" cellpadding="2">
+<table border="0" cellspacing="0" cellpadding="2"  align="center">
 <tr>
 <th>
-
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (0).jpeg"  width="100" title="26.7">
 </th>
 <th>
-![alt text](http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (2).jpeg )
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (1).jpeg" width="100" title="26.2">
 </th>
 <th>
-![alt text](http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (3).jpeg )
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (2).jpeg" width="100" title="38.4">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (3).jpeg" width="100"  title="28.7">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (4).jpeg" width="100" title="41.3">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (5).jpeg" width="100" title="57.3">
 </th>
 </tr>
 <tr>
-<th>![Caption for the picture.](/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png)</th>
-<th>![Caption for the picture.](/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png)</th>
-<th>![Caption for the picture.](http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (32).jpeg){:height="36px" width="36px"}</th>
-</tr >
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (6).jpeg" width="100"  title="34.2">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (7).jpeg" width="100"  title="32.3">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (8).jpeg" width="100"  title="31.3">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (9).jpeg" width="100"  title="36.2">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (10).jpeg" width="100"  title="23">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (11).jpeg" width="100"  title="35.6">
+</th>
+</tr>
+<tr>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (12).jpeg" width="100"  title="29.5">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (13).jpeg" width="100"  title="37.4">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (14).jpeg" width="100"  title="41">
+</th> 
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (15).jpeg" width="100"  title="20">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (16).jpeg" width="100"  title="26.8">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (17).jpeg" width="100"  title="38">
+</th>
+</tr>
+<tr>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (18).jpeg" width="100"  title="34.2">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (19).jpeg" width="100"  title="33.6">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (20).jpeg" width="100"  title="25.6">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (21).jpeg" width="100"  title="32.1">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (22).jpeg" width="100"  title="30.8">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (23).jpeg" width="100"  title="24.3">
+</th>
+</tr>
+<tr>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (24).jpeg" width="100"  title="30.8">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (25).jpeg" width="100"  title="24.3">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (26).jpeg" width="100"  title="31.6">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (27).jpeg" width="100"  title="26.2">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (28).jpeg" width="100"  title="24.7">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (29).jpeg" width="100"  title="24.5">
+</th>
+</tr>
+<tr>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (30).jpeg" width="100"  title="22.9">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (31).jpeg" width="100" title="28">
+</th>
+<th>
+<img src="/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png" width="100">
+</th>
+<th>
+<img src="/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png" width="100">
+</th>
+<th>
+<img src="/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png" width="100">
+</th>
+<th>
+<img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (32).jpeg" width="100"  title="33.4">
+</th>
+</tr>
 </table> 
 </noformat>
+<br>
+<br>
 
-This study's idea is to <http://rmarkdown.rstudio.com>.
+The histogram of frequencies, showd in Figure 1 below, indecates that the male students seem to be, in average, aproximately 5 years older than the females. The mean age values by gender -27.6 females and -32.7 years old for males- is traced with a vertical dotted line. 
+<br>
+<br>
+```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
+library(reshape2)
+library(ggthemes)
+library(plyr)
+library(ggplot2)
+library(gridExtra)
+ages <- read.csv("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/ages.csv")
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+#now make your lovely plot
+cdat <- ddply(ages, "gender", summarise, age.mean=mean(age))
 
-![Caption for the picture.](/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png)
+# Overlaid histograms with means
+ggplot(ages, aes(x=age, fill=gender)) +
+  geom_histogram(binwidth=4, alpha=1, position="dodge") +
+  geom_vline(data=cdat, aes(xintercept=age.mean,  colour=gender),
+             linetype="dashed", size=1) +
+ theme_fivethirtyeight() + ggtitle("Histogram of ages by gender") + scale_fill_gdocs() + scale_color_gdocs()
 
-{% include image.html url="/images/my-cat.jpg" description="My cat, Robert Downey Jr." %}
-
-<table class="image">
-<caption align="bottom">{{ include.description }}</caption>
-<tr><td><img src="{{ include.url }}" alt="{{ include.description }}"/></td></tr>
-</table>
-
-```{r}
-summary(cars)
 ```
 
-You can also embed plots, for example:
 
-```{r, echo=FALSE}
-plot(cars)
+## What do we know
+To explore the data about the programing expreiences and skills we trace a bar and a series of bubble plots. 
+<br>
+<br>
+```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
+library(xlsx)
+data <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/data_clean.xlsx", 1)
+library(reshape2)
+
+program_data <- subset(data, select = c(2,6:11))
+combined_program_data = melt(program_data, id.vars = "Program", variable.name = "Programming Experience", value.name = "Level")
+stat1 <- table(program_data$R..graphic.basics)
+stat2 <- table(program_data$R..advanced)
+stat3 <- table(program_data$Reproducible.documentation.with.R)
+stat4 <- table(program_data$Matlab..data.manipulation..analysis..visualization.and.modeling)
+stat5 <- table(program_data$Github)
+stat6 <- table(program_data$R..data.manipulation.and.modeling)
+library(plyr)
+plot_data <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/plot_revised.xlsx", 1)
+plot_data1 <- ddply(plot_data, "Programming.Experience", transform, label_y=cumsum(Count))
+library(ggplot2)
+bp <- ggplot(plot_data, aes(x=Programming.Experience, y=Count, fill = Level)) + 
+  geom_bar(stat = "identity") +
+  guides(fill=guide_legend(reverse=TRUE)) + scale_fill_discrete(breaks=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + ggtitle("Programing Experiences") + scale_fill_gdocs() + scale_color_gdocs()
+bp
+```
+This plot showes the distribution of programming level among different skills
+Used R code to find the statistical data which is needed and then used ggplot to draw the graph. 
+<br>
+<br>
+```{r fig.width=12, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
+for(i in 1:dim(program_data)[2]){program_data[,i] = as.character(program_data[,i])}
+programming_level <- c("None","A little","Confident", "Expert")
+r_matlab_count = c()
+
+for (level1 in programming_level){
+  for (level2 in programming_level){
+    count = program_data$Program[program_data$Matlab..data.manipulation..analysis..visualization.and.modeling==level1 & program_data$R..data.manipulation.and.modeling==level2]
+    cnt = length(count)
+    r_matlab_count = append(r_matlab_count,cnt)
+  }
+}
+plot_data2 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/Matlab&R_data_mani.xlsx", 1)
+bp1 <- ggplot(plot_data2, aes(x=Matlab, y=data.manipulation.and.modeling, size=Count, label = Count),guide=FALSE) +
+  geom_point(colour="white", fill="red", shape=21) 
+bp1 <- bp1 + scale_size_area(max_size = 15) +        scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Github vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("Github") + xlab("Matlab") 
+
+matlab_github_count = c()
+for (level1 in programming_level){
+  for (level2 in programming_level){
+    count = program_data$Program[program_data$Matlab..data.manipulation..analysis..visualization.and.modeling==level1 & program_data$Github==level2]
+    cnt = length(count)
+    matlab_github_count = append(matlab_github_count,cnt)
+  }
+}
+plot_data3 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/Matlab&Github.xlsx", 1)
+bp2 <- ggplot(plot_data3, aes(x=Matlab, y=Github, size=Count, label = Count),guide=FALSE)+
+  geom_point(colour="white", fill="red", shape=21)+ scale_size_area(max_size = 15)+  scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Reprod. vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("Reproducible Documentation") + xlab("Matlab")
+
+graphics_documentation_count = c()
+for (level1 in programming_level){
+  for (level2 in programming_level){
+    count = program_data$Program[program_data$R..graphic.basics==level1 & program_data$Reproducible.documentation.with.R==level2]
+    cnt = length(count)
+    graphics_documentation_count = append(graphics_documentation_count,cnt)
+  }
+}
+plot_data4 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/graphics&docu.xlsx", 1)
+bp3 <- ggplot(plot_data4, aes(x=graphics.basics, y=reproducible.documentation, size=Count, label = Count),guide=FALSE)+
+  geom_point(colour="white", fill="red", shape=21)+ scale_size_area(max_size = 15)+
+  theme_bw() + scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("R vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("R data manipulation & modelling")
+
+grid.arrange(bp1, bp2, bp3, ncol=3)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+

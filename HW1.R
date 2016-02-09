@@ -16,7 +16,7 @@ img.url = 'http://www.columbia.edu/~xig2000/HW1VIS/photos/'
 photo.data <- data.frame(smile=NA, gender=NA, age=NA, moustache=NA, beard=NA, sideburns=NA)
 
 photo.dirs <-rep(NA,32)
-for (i in 0:0) {
+for (i in 18:24) {
   
   photo_name <- paste(c('ParticipantImageServlet (',i,').jpeg'),sep="",collapse="")
   
