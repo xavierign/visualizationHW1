@@ -5,7 +5,7 @@ output: html_document
 ---
 
 ## Introduction
-This study analyses the data from the initial survey conducted at the begginin of the course Exploratory Data Analysis and Visualization in Columbia University. Its proupose, as the team members agreed, is to to do a hands-on work with visualization tools introduced. Along the study, we will try to present with an original visualization part of the answer of some question about the data.
+This study analyses the data from the initial survey conducted at the begginin of the course Exploratory Data Analysis and Visualization in Columbia University. Its proupose, as the team members agreed, is to to do a hands-on work with visualization tools introduced. Along the study, we will try to present with an original visualization part of the answer of some question about the data. To draw some of the charts, we copied the format from [fivethirtyeight.com](http://fivethirtyeight.com/), which is a great data-analysis and visualization site that we took as inspiration. Also, the colors used in the charts are the same as those google docs. This could be easly implemented using the package [ggthems](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) as a complement of [ggplot2](http://ggplot2.org/). We strongly recomend that you take a look at them if you don't know them already, to avoid changing manually: the font, the sizes, the colors, etc. in each graph individually in your future presentations.
 
 ## Who we are
 Interactive chart.
@@ -247,8 +247,8 @@ findAssocs(dtm, terms = "freedom", corlimit = 0.3)
 
 d$word2 <- reorder(d$word, -d$freq, decreasing=T)
 
-c <- ggplot(data=d[1:10,], aes(x=word2, y=freq)) +
-    geom_bar(stat="identity")+ theme_fivethirtyeight() + ggtitle("Most frequently mentioned tools") + scale_fill_gdocs() + scale_color_gdocs() 
+c <- ggplot(data=d[1:10,], aes(x=word2, y=freq, fill="blue")) +
+    geom_bar(stat="identity")+ theme_fivethirtyeight() + ggtitle("Most frequently mentioned tools") + scale_fill_gdocs() + scale_color_gdocs()+ theme(legend.position="none")
 c
 
 ```
@@ -329,7 +329,7 @@ for (level1 in programming_level){
 plot_data4 <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/graphics&docu.xlsx", 1)
 bp3 <- ggplot(plot_data4, aes(x=graphics.basics, y=reproducible.documentation, size=Count, label = Count),guide=FALSE)+
   geom_point(colour="white", fill="red", shape=21)+ scale_size_area(max_size = 15)+
-  theme_bw() + scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("R vs. Matlab") + scale_fill_gdocs() + scale_color_gdocs() + ylab("R data manipulation & modelling")+ theme(legend.position="none")
+  theme_bw() + scale_x_discrete(limits=c("None","A little","Confident", "Expert")) + scale_y_discrete(limits=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + theme(axis.title=element_text(size=12)) + ggtitle("Data manipulation vs. Basic graphics") + scale_fill_gdocs() + scale_color_gdocs() + ylab("R data manipulation & modelling")+ theme(legend.position="none") + xlab("R basic graphics")
 
 grid.arrange(bp1, bp2, bp3, ncol=3)
 ```
