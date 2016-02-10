@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://aa3775.neocities.org/edav.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="Visualization of Survey Results">
+    <meta name="author" content="Azam Alfayez">
+
+    <title>Visualizing EDAV Survey Results</title>
+
+    <link href="./Visualizing EDAV Survey Results_files/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Atlas Grotesk', serif;
+        font-size: 15px;
+      }
+      h1, h2, h3, h4 {
+        font-weight: 600;
+        font-family: 'Atlas Grotesk', sans-serif;
+      }
+      .axis-label {
+        font-family: 'Atlas Grotesk', sans-serif;
+        font-size: 16px;
+        fill: #888;
+      }
+      .button-labels {
+        font-family: 'Atlas Grotesk', sans-serif;
+      }
+      
+      /* Histogram */
+      #histogram {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .btn-group-specials {
+        margin-left: 20px;
+      }
+            /* Misc */
+      .label {
+        font-size: 80%;
+      }
+      
+      .title {
+        font-weight: bold;
+      }
+      
+      .axis text {
+        font-size: 80%;
+      }
+      
+      .axis path, line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+      
+      p {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 20px;
+      }
+      
+
+
+    </style>
+  </head>
+  <body>
+      
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="histogram" style=" width: 50%;margin: 0 auto; "><svg viewBox="0 0 500 425"><g transform="translate(50, 20)"><g class="axis" transform="translate(0, 370)"><g class="tick" transform="translate(0,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" transform="translate(8.333333333333334, 5)" style="text-anchor: middle;">Male</text></g><g class="tick" transform="translate(40,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" transform="translate(8.333333333333334, 5)" style="text-anchor: middle;">Female</text></g><path class="domain" d="M0,6V0H80V6"></path></g><g class="axis" id="y-axis"><g class="tick" transform="translate(0,370)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0</text></g><g class="tick" transform="translate(0,347.16049382716045)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">5</text></g><g class="tick" transform="translate(0,324.320987654321)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">10</text></g><g class="tick" transform="translate(0,301.4814814814815)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">15</text></g><g class="tick" transform="translate(0,278.641975308642)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">20</text></g><g class="tick" transform="translate(0,255.80246913580245)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">25</text></g><g class="tick" transform="translate(0,232.96296296296296)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">30</text></g><g class="tick" transform="translate(0,210.1234567901235)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">35</text></g><g class="tick" transform="translate(0,187.28395061728395)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">40</text></g><g class="tick" transform="translate(0,164.44444444444443)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">45</text></g><g class="tick" transform="translate(0,141.60493827160496)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">50</text></g><g class="tick" transform="translate(0,118.76543209876543)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">55</text></g><g class="tick" transform="translate(0,95.92592592592594)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">60</text></g><g class="tick" transform="translate(0,73.08641975308642)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">65</text></g><g class="tick" transform="translate(0,50.24691358024693)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">70</text></g><g class="tick" transform="translate(0,27.407407407407405)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">75</text></g><g class="tick" transform="translate(0,4.5679012345679215)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">80</text></g><path class="domain" d="M-6,0H0V370H-6"></path></g><rect fill="#0000ff" width="10.833333333333334" transform="translate(2.916666666666667, 0)" height="370" y="0" x="0" style="opacity: 0.8;"></rect><rect fill="#ff0000" width="10.833333333333334" transform="translate(2.916666666666667, 0)" height="146.17283950617283" y="223.82716049382717" x="40" style="opacity: 0.8;"></rect></g></svg></div>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-sm-12 text-center button-labels">
+          <div class="btn-group btn-group-xs" role="group" aria-label="...">
+            <button type="button" class="btn btn-default btn-month center-block active" value="0">IDSE (master)</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="1">Other masters</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="2">DS Certification</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="3">Statistics (master)</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="4">QMSS</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="5">Ph.D.</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="6">Applied Math</button>
+          </div>
+        </div>
+      </div>
+      <div class="row top10">
+        <div class="col-md-12 text-center button-labels">
+
+          <div class="btn-group btn-group-xs btn-group-specials" role="group" aria-label="...">
+            <button type="button" class="btn btn-default center-block select-all">Select All</button>
+            <button type="button" class="btn btn-default center-block deselect-all">Deselect All</button>
+          </div>
+        </div>
+      </div>
+              <div class="row">
+          <div class="col-xs-12">
+      <p>In order to understand the survey responders better, an interactive visual graph was developed using d3 to show the different percentages in terms of genders. Clearly, the number of male students (71%) is more than female (28%). Moreover, male students are dominating the population for each program. It is worth mentioning that the highest percentage of female is within Master in Statistics Program with around 47%.  On the other hand, female students has the lowest percentage in Data Science Program (both for master and certification). Overall, the percentages can be summarized in a symmetric graph as follows:</p>
+          </div>
+        </div>
+
+     
+    <script src="./Visualizing EDAV Survey Results_files/d3.v3.min.js"></script>
+    <script src="./Visualizing EDAV Survey Results_files/jquery.min.js"></script>
+    <script src="./Visualizing EDAV Survey Results_files/histogram.js"></script>
+    <script src="./Visualizing EDAV Survey Results_files/bootstrap.min.js"></script>
+  
+</body></html>

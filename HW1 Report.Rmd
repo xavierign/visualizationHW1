@@ -1,6 +1,6 @@
 ---
 title: "HW1 Visualization. The Class Survey Data Visualization."
-author: "Azam Alfayez, Yu Xiyue, John Elton, Xavier I Gonzalez"
+author: "The Internet Explorers"
 output: html_document
 ---
 
@@ -8,10 +8,35 @@ output: html_document
 This study analyses the data from the initial survey conducted at the begginin of the course Exploratory Data Analysis and Visualization in Columbia University. Its proupose, as the team members agreed, is to to do a hands-on work with visualization tools introduced. Along the study, we will try to present with an original visualization part of the answer of some question about the data. To draw some of the charts, we copied the format from [fivethirtyeight.com](http://fivethirtyeight.com/), which is a great data-analysis and visualization site that we took as inspiration. Also, the colors used in the charts are the same as those google docs. This could be easly implemented using the package [ggthems](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) as a complement of [ggplot2](http://ggplot2.org/). We strongly recomend that you take a look at them if you don't know them already, to avoid changing manually: the font, the sizes, the colors, etc. in each graph individually in your future presentations.
 
 ## Who we are
-Interactive chart.
+In order to understand the survey responders better, an interactive visual graph was developed using d3 to show the different percentages in terms of genders. Clearly, the number of male students (71%) is more than female (28%). Moreover, male students are dominating the population for each program. It is worth mentioning that the highest percentage of female is within Master in Statistics Program with around 47%. On the other hand, female students has the lowest percentage in Data Science Program (both for master and certification). Overall, the percentages can be summarized in a symmetric graph as follows. An interesting interactive chart can be found [here](http://aa3775.neocities.org/edav.html).
+
+```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
+library(xlsx)
+data <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/data_clean.xlsx", 1)
+data$Program <- as.character(data$Program)
+library(reshape2)
+data$Program [data$Program %in% c('Data Science', 'Data Science Certification', 'IDSE (master)', 'Ms in ds', 'MSDS') ] <- "Data Science"
+
+data$Program [data$Program %in% c('QMSS', 'QMSS (master)')] <- "Social Science"
+
+data$Program [data$Program %in% c('Ph.D.', 'PhD Biomedical Informatics')] <- "PhD"
+
+data$Program [data$Program %in% c('Applied Math', 'Statistics (master)')] <- "Math/Statistics"
+
+library(ggthemes)
+colnames(data)[4] <- 'gender'
+library(plyr)
+library(ggplot2)
+ bp <- ggplot(data, aes(gender, fill=Program)) + geom_bar() + theme_fivethirtyeight() + ggtitle("Program by gender") + scale_fill_gdocs() + scale_color_gdocs() +coord_flip()
+ 
+#              +  geom_bar(stat = "identity") +
+#   guides(fill=guide_legend(reverse=TRUE)) + scale_fill_discrete(breaks=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + ggtitle("Programing Experiences") + scale_fill_gdocs() + scale_color_gdocs()
+bp
+```
+
 
 ## How old are we
-We thught that it would be ideal to have the age of the students in the course to understand more deeply their demographic information. Hence, we downloeaded available pictures in coursewors and send them to [Face API](https://www.projectoxford.ai/face) from Microsoft Project Oxford to estimate the age of each picture. By doing that, we have a relatively accurate age estimation of 31 students, wich is more than 28% of the entire population. For those interested in how we did it, besides the code in [Github](https://github.com/xavierign/visualizationHW1), there is this usefull tutorial: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/). This visualization is intended only to be reviewed within the activities in the course. If you think that your picture should not be there, just provide a feedback and we will remove it inmediately. Also, we would like to know if the estimation is accurate of not. So, if you have 2 minutes, we will appreciate your feedback filling this [form](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form). You can slip the mouse over the pictures to see the estimated age.
+We thught that it would be ideal to have the age of the students in the course to understand more deeply their demographic information. Hence, we downloeaded available pictures in courseworks and send them to [Face API](https://www.projectoxford.ai/face) from Microsoft Project Oxford to estimate the age of each picture. By doing that, we have a relatively accurate age estimation of 31 students, wich is more than 28% of the entire population. For those interested in how we did it, besides the code in [Github](https://github.com/xavierign/visualizationHW1), there is this usefull tutorial: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/). This visualization is intended only to be reviewed within the activities in the course. If you think that your picture should not be there, just provide a feedback and we will remove it inmediately. Also, we would like to know if the estimation is accurate of not. So, if you have 2 minutes, we will appreciate your feedback filling this [form](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form). You can slip the mouse over the pictures to see the estimated age.
 <br>
 <br>
 
@@ -142,7 +167,6 @@ We thught that it would be ideal to have the age of the students in the course t
 </noformat>
 <br>
 <br>
-
 The histogram of frequencies, showd in Figure 1 below, indecates that the male students seem to be, in average, aproximately 5 years older than the females. The mean age values by gender -27.6 females and -32.7 years old for males- is traced with a vertical dotted line. 
 <br>
 <br>
@@ -165,15 +189,16 @@ ggplot(ages, aes(x=age, fill=gender)) +
  theme_fivethirtyeight() + ggtitle("Histogram of ages by gender") + scale_fill_gdocs() + scale_color_gdocs()
 
 ```
-
+<br>
+<br>
+some closing text..
 
 ## Familiarity with Computational Tools
 
 In this section we explore methods to visualize the relative knowledge of the class as far as computational tools are concerned. In the survey, students were asked to select
 which tools they felt comfortable using from among a list of 20. The type of tools varies from specific computer languages like Python, to more general applications like Google Drive.
 
-We present two methods for visualizing which tools the greatest number of students feel comfortable with. The first is a Word Cloud. The Word Cloud below prints words with a font size that is correlated to the frequency of responses. So, for example, if more students selected 'R' than any other tool, then 'R' would show up in the largest font.
-
+We present two methods for visualizing which tools the greatest number of students feel comfortable with. The first is a Word Cloud. The Word Cloud below prints words with a font size that is correlated to the frequency of responses. So, for example, if more students selected 'R' than any other tool, then 'R' would show up in the largest font. To obtain this graph we used the package [wordcloud](https://cran.r-project.org/web/packages/wordcloud/wordcloud.pdf).
 ```{r,include=FALSE}
 options(warn=-1)
 rm(list = ls())
@@ -225,16 +250,16 @@ print(head(d, 30))
 set.seed(1234)
 ```
 
-```{r, echo=FALSE, fig.height = 5, fig.width = 5, fig.align='center'}
+```{r, echo=FALSE, fig.height = 4, fig.width = 6, fig.align='center'}
 wordcloud(words = d$word, freq = d$freq, min.freq = 0,
           max.words=2000, random.order=FALSE, rot.per=0.35, 
           colors=brewer.pal(8, "Dark2"))
 ```
-
 The Word Cloud, while not quantitative, provides a nice visual to give the audience a general sense of which tools are most well known among the class. We see that 'R' and 'Python' show up frequently, as well as 'Excel' and 'Drive'. We were not surprised by this result, since these languages and tools are commonly pushed in our classes.
 
 For a more quantitative visualization of the responses, we also present a histogram which is ordered from largest number of responses to smallest. From this we can see more accurately than with the Word Cloud which tools were responded to more frequently than others. 
-
+<br>
+<br>
 ```{r, include=FALSE}
 findFreqTerms(dtm, lowfreq = 3)
 findAssocs(dtm, terms = "freedom", corlimit = 0.3)
@@ -252,12 +277,9 @@ c <- ggplot(data=d[1:10,], aes(x=word2, y=freq, fill="blue")) +
 c
 
 ```
-
-
+<br>
+<br>
 The conclusion one can draw from this visualization of our comfort level with various tools is that the majority of the class has experience with 'R' and 'Python'. Some of the more specialized tools like 'SQL' and 'Github' are less familiar to the class, and certain other tools such as 'Sweave' and 'grep' do not show up at all because few people are experienced with them. These considerations would be important for an instructor wanting to determine what class members know coming in. 
-
-
-
 
 ## What do we know
 To explore the data about the programing expreiences and skills we trace a bar and a series of bubble plots. 
@@ -285,6 +307,8 @@ bp <- ggplot(plot_data, aes(x=Programming.Experience, y=Count, fill = Level)) +
   guides(fill=guide_legend(reverse=TRUE)) + scale_fill_discrete(breaks=c("None","A little","Confident", "Expert")) + theme_fivethirtyeight() + ggtitle("Programing Experiences") + scale_fill_gdocs() + scale_color_gdocs()
 bp
 ```
+<br>
+<br>
 This plot showes the distribution of programming level among different skills
 Used R code to find the statistical data which is needed and then used ggplot to draw the graph. 
 <br>
@@ -333,5 +357,8 @@ bp3 <- ggplot(plot_data4, aes(x=graphics.basics, y=reproducible.documentation, s
 
 grid.arrange(bp1, bp2, bp3, ncol=3)
 ```
-
-
+<br>
+<br>
+This is the end of the presentation. We hope you take something usefull from it.
+<br>
+<br>
