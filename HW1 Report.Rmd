@@ -309,8 +309,8 @@ bp
 ```
 <br>
 <br>
-This plot showes the distribution of programming level among different skills levels.
-We used R code to find the statistical data which is needed and then used ggplot to draw the graph. 
+This plot showes the distribution of programming level among different skill levels.
+We used R code to find the statistical data which is needed, and then used ggplot to draw the graph. 
 <br>
 <br>
 ```{r fig.width=12, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
@@ -359,6 +359,6 @@ grid.arrange(bp1, bp2, bp3, ncol=3)
 ```
 <br>
 <br>
-This is the end of the presentation. We hope you take something usefull from it.
+This is the end of our presentation. We hope you have taken something useful from it.
 <br>
 <br>
