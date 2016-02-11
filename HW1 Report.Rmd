@@ -5,10 +5,10 @@ output: html_document
 ---
 
 ## Introduction
-This study analyzes the data from the initial survey conducted at the beginning of the course "Exploratory Data Analysis and Visualization" at Columbia University. Its purpose, as the team members agreed, is to do some hands-on work with the visualization tools introduced. We will present with an original visualization, answers to some questions about the data. To draw some of the charts, we copied the format from [fivethirtyeight.com](http://fivethirtyeight.com/), which is a great data-analysis and visualization site that we took as inspiration. Also, the colors used in the charts are the same as those google docs. This could be easily implemented using the package [ggthems](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) as a complement of [ggplot2](http://ggplot2.org/). We strongly recomend that you take a look at them if you don't know them already, to avoid changing manually: the font, the sizes, the colors, etc. in each graph individually in your future presentations.
+This study analyzes the data from the initial survey conducted at the beginning of the course "Exploratory Data Analysis and Visualization" at Columbia University. The purpose of the first project, as the team members agreed, is to do some hands-on work with the visualization tools introduced in lecture. We will present, with original visualizations, answers to some questions about the data. To draw some of the charts, we copied the format from [fivethirtyeight.com](http://fivethirtyeight.com/), which is a great data-analysis and visualization site that we took as inspiration. Also, the colors used in the charts are the same as those Google docs. This could be easily implemented using the package [ggthems](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) as a complement of [ggplot2](http://ggplot2.org/). We strongly recomend that the reader take a look at these to avoid manually changing the font, the sizes, the colors, etc... in each graph individually in your future presentations.
 
 ## Who we are
-In order to have a better understanding of the makeup of survey responders, an interactive visual graph was developed using "d3" to show the the gender makeup among out various programs in terms of percentages. Clearly, the number of male students (71%) is more than female (28%). Moreover, male students are dominating the population for each program. It is worth mentioning that the highest percentage of female is within the Masters in Statistics program, with around 47%. On the other hand, female students has the lowest percentage in the Data Science Program (both for Masters and Certification). Overall, the percentages can be summarized in a symmetric graph as follows. An interesting interactive chart can be found [here](http://aa3775.neocities.org/edav.html).
+In order to have a better understanding of the makeup of survey responders, an interactive visual graph was developed using d3 to show the the gender distribution among our various programs. Clearly, the number of male students (71%) is more than female (28%). Moreover, male students dominate the population for each program. It is worth mentioning that the highest percentage of female students is within the Masters in Statistics program, with around 47%. On the other hand, female students have the lowest percentage in the Data Science Program (both for Masters and Certification). Overall, the percentages can be summarized in a symmetric graph as follows. An interesting interactive chart can be found [here](http://aa3775.neocities.org/edav.html).
 
 ```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
 library(xlsx)
@@ -35,8 +35,8 @@ bp
 ```
 
 
-## How old are we
-We thught that it would be ideal to have the age of the students in the course to understand more deeply their demographic information. Hence, we downloeaded available pictures in courseworks and send them to [Face API](https://www.projectoxford.ai/face) from Microsoft Project Oxford to estimate the age of each picture. By doing that, we have a relatively accurate age estimation of 31 students, wich is more than 28% of the entire population. For those interested in how we did it, besides the code in [Github](https://github.com/xavierign/visualizationHW1), there is this usefull tutorial: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/). This visualization is intended only to be reviewed within the activities in the course. If you think that your picture should not be there, just provide a feedback and we will remove it inmediately. Also, we would like to know if the estimation is accurate of not. So, if you have 2 minutes, we will appreciate your feedback filling this [form](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form). You can slip the mouse over the pictures to see the estimated age.
+## How old are we?
+We thought that it would be interesting to have the age of the students in the course to understand more deeply their demographic information. Hence, we downloaded available pictures in courseworks and sent them to [Face API](https://www.projectoxford.ai/face) from Microsoft Project Oxford to estimate the age of each picture. By doing that, we have a relatively accurate age estimation of 31 students, wich is more than 28% of the entire population. For those interested in how we did it, aside from the code in [Github](https://github.com/xavierign/visualizationHW1), there is this useful tutorial: [Analyzing 'Twitter faces' in R with Microsoft Project Oxford](http://www.r-bloggers.com/analyzing-twitter-faces-in-r-with-microsoft-project-oxford/). This visualization is intended only to be reviewed within the activities in the course. If you would prefer your picture not to be there, just provide us that feedback and we will remove it immediately. Also, we would like to know if the estimation is accurate or not. So, if you don't mind letting us know, please enter your true age in the following form: [form](https://docs.google.com/forms/d/1ZvdG8KxJvBhR9tcJTpk9n_awyE5ERF3X6mjtEezcrsc/viewform?usp=send_form). You can slide the mouse over the pictures to see the estimated age.
 <br>
 <br>
 
@@ -167,7 +167,7 @@ We thught that it would be ideal to have the age of the students in the course t
 </noformat>
 <br>
 <br>
-The histogram of frequencies, showd in Figure 1 below, indecates that the male students seem to be, in average, aproximately 5 years older than the females. The mean age values by gender -27.6 females and -32.7 years old for males- is traced with a vertical dotted line. 
+The histogram of frequencies, shown in Figure 1 below, indicates that the male students seem to be, on average, approximately 5 years older than the females. The mean age values by gender, 27.6 for females and 32.7 for males, is traced with a vertical dotted line. 
 <br>
 <br>
 ```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
@@ -191,7 +191,7 @@ ggplot(ages, aes(x=age, fill=gender)) +
 ```
 <br>
 <br>
-some closing text..
+
 
 ## Familiarity with Computational Tools
 
@@ -281,8 +281,8 @@ c
 <br>
 The conclusion one can draw from this visualization of our comfort level with various tools is that the majority of the class has experience with 'R' and 'Python'. Some of the more specialized tools like 'SQL' and 'Github' are less familiar to the class, and certain other tools such as 'Sweave' and 'grep' do not show up at all because few people are experienced with them. These considerations would be important for an instructor wanting to determine what class members know coming in. 
 
-## What do we know
-To explore the data about the programing expreiences and skills we trace a bar and a series of bubble plots. 
+## What else do we know?
+To explore the data about programming expreience and skill we show a bar chart and a series of bubble plots. 
 <br>
 <br>
 ```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
@@ -309,8 +309,8 @@ bp
 ```
 <br>
 <br>
-This plot showes the distribution of programming level among different skills
-Used R code to find the statistical data which is needed and then used ggplot to draw the graph. 
+This plot showes the distribution of programming level among different skills levels.
+We used R code to find the statistical data which is needed and then used ggplot to draw the graph. 
 <br>
 <br>
 ```{r fig.width=12, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Figure 1', cache=FALSE, message=FALSE, warning=FALSE}
