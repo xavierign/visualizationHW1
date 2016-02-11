@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="Visualization of Survey Results">
+
+    <title>Visualizing EDAV Survey Results</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Atlas Grotesk', serif;
+        font-size: 15px;
+      }
+      h1, h2, h3, h4 {
+        font-weight: 600;
+        font-family: 'Atlas Grotesk', sans-serif;
+      }
+      .axis-label {
+        font-family: 'Atlas Grotesk', sans-serif;
+        font-size: 16px;
+        fill: #888;
+      }
+      .button-labels {
+        font-family: 'Atlas Grotesk', sans-serif;
+      }
+      
+      /* Histogram */
+      #histogram {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .btn-group-specials {
+        margin-left: 20px;
+      }
+            /* Misc */
+      .label {
+        font-size: 80%;
+      }
+      
+      .title {
+        font-weight: bold;
+      }
+      
+      .axis text {
+        font-size: 80%;
+      }
+      
+      .axis path, line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+      
+      p {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 20px;
+      }
+      
+
+
+    </style>
+  </head>
+  <body>
+      
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="histogram" style=" width: 50%;margin: 0 auto; "></div>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-sm-12 text-center button-labels">
+          <div class="btn-group btn-group-xs" role="group" aria-label="...">
+            <button type="button" class="btn btn-default btn-month center-block active" value="0">IDSE (master)</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="1">Other masters</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="2">DS Certification</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="3">Statistics (master)</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="4">QMSS</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="5">Ph.D.</button>
+            <button type="button" class="btn btn-default btn-month center-block active" value="6">Applied Math</button>
+          </div>
+        </div>
+      </div>
+      <div class="row top10">
+        <div class="col-md-12 text-center button-labels">
+
+          <div class="btn-group btn-group-xs btn-group-specials" role="group" aria-label="...">
+            <button type="button" class="btn btn-default center-block select-all">Select All</button>
+            <button type="button" class="btn btn-default center-block deselect-all">Deselect All</button>
+          </div>
+        </div>
+      </div>
+              <div class="row">
+          <div class="col-xs-12">
+      <p>In order to understand the survey responders better, an interactive visual graph was developed using d3 to show the different percentages in terms of genders. Clearly, the number of male students (71%) is more than female (28%). Moreover, male students are dominating the population for each program. It is worth mentioning that the highest percentage of female is within Master in Statistics Program with around 47%.  On the other hand, female students has the lowest percentage in Data Science Program (both for master and certification). Overall, the percentages can be summarized in a symmetric graph as follows:</p>
+          </div>
+        </div>
+
+     
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="histogram.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
