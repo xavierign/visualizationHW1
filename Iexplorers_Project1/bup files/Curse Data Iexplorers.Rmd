@@ -15,13 +15,13 @@ library(xlsx)
 data <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/data_clean.xlsx", 1)
 data$Program <- as.character(data$Program)
 library(reshape2)
-data$Program [data$Program %in% c('Data Science', 'Data Science Certification', 'IDSE (master)', 'Ms in ds', 'MSDS') ] <- "DS"
+data$Program [data$Program %in% c('Data Science', 'Data Science Certification', 'IDSE (master)', 'Ms in ds', 'MSDS') ] <- "Data Science"
 
-data$Program [data$Program %in% c('QMSS', 'QMSS (master)')] <- "Soc. Sc."
+data$Program [data$Program %in% c('QMSS', 'QMSS (master)')] <- "Social Science"
 
 data$Program [data$Program %in% c('Ph.D.', 'PhD Biomedical Informatics')] <- "PhD"
 
-data$Program [data$Program %in% c('Applied Math', 'Statistics (master)')] <- "Math/Stats"
+data$Program [data$Program %in% c('Applied Math', 'Statistics (master)')] <- "Math/Statistics"
 
 library(ggthemes)
 colnames(data)[4] <- 'gender'
@@ -151,7 +151,7 @@ We thought that it would be interesting to have the age of the students in the c
 <img src="http://www.columbia.edu/~xig2000/HW1VIS/photos/ParticipantImageServlet (31).jpeg" width="100" title="28">
 </th>
 <th>
-<img src="/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png" width="100">
+<img src="/Photos/downloadcolumbiaicon.png" width="100">
 </th>
 <th>
 <img src="/Users/xavierign/Dropbox/Columbia/Exploratory/visualizationHW1/Photos/downloadcolumbiaicon.png" width="100">

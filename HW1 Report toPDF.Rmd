@@ -28,13 +28,13 @@ library(xlsx)
 data <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/data_clean.xlsx", 1)
 data$Program <- as.character(data$Program)
 library(reshape2)
-data$Program [data$Program %in% c('Data Science', 'Data Science Certification', 'IDSE (master)', 'Ms in ds', 'MSDS') ] <- "Data Science"
+data$Program [data$Program %in% c('Data Science', 'Data Science Certification', 'IDSE (master)', 'Ms in ds', 'MSDS') ] <- "DS"
 
-data$Program [data$Program %in% c('QMSS', 'QMSS (master)')] <- "SS"
+data$Program [data$Program %in% c('QMSS', 'QMSS (master)')] <- "Social S."
 
 data$Program [data$Program %in% c('Ph.D.', 'PhD Biomedical Informatics')] <- "PhD"
 
-data$Program [data$Program %in% c('Applied Math', 'Statistics (master)')] <- "Math/Statistics"
+data$Program [data$Program %in% c('Applied Math', 'Statistics (master)')] <- "Math/Stats"
 
 library(ggthemes)
 colnames(data)[4] <- 'gender'
@@ -281,7 +281,7 @@ findFreqTerms(dtm, lowfreq = 3)
 findAssocs(dtm, terms = "freedom", corlimit = 0.3)
 ```
 
-```{r, echo=FALSE, fig.height = 4, fig.width = 6 , fig.align="center"}
+```{r, echo=FALSE, fig.height = 4, fig.width = 6 , fig.align="center", fig.cap="Most frequently mentioned tools"}
 #barplot(d[1:10,]$freq, las = 2, names.arg = d[1:10,]$word,
 #        col ="lightblue", main ="Most frequent tools",
 #        ylab = "Word frequencies")
@@ -298,7 +298,7 @@ c
 To explore the data about programming expreience and skill we show a bar chart and a series of bubble plots. 
 <br>
 <br>
-```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center',fig.cap='Most mentioned tools', cache=FALSE, message=FALSE, warning=FALSE}
+```{r fig.width=6, fig.height=4, echo=FALSE, fig.align='center', fig.cap='Program experiences by tool', cache=FALSE, message=FALSE, warning=FALSE}
 library(xlsx)
 data <- read.xlsx("/Users/xavierign/Dropbox/Columbia/Exploratory/VisualizationHW1/data_clean.xlsx", 1)
 library(reshape2)
@@ -373,6 +373,6 @@ grid.arrange(bp1, bp2, bp3, ncol=3)
 ```
 <br>
 <br>
-This is the end of our presentation. We hope you have taken something useful from it.
+In conclusion, we tried to do few simple plots to show the course data. Our intention was to illustrate with charts how to tell something. We hope the reader can take something useful from this work. 
 <br>
 <br>
